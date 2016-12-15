@@ -45,6 +45,9 @@ add_subdirectory("third_party/libdabdecode")
 include_directories("include")
 include_directories(SYSTEM "third_party/asio/asio/include")
 include_directories(SYSTEM "${DABIP_INCLUDES}")
+include_directories(SYSTEM "${DABDEMOD_INCLUDES}")
+include_directories(SYSTEM "${DABDECODE_INCLUDES}")
+include_directories(SYSTEM "${DABDEVICE_INCLUDES}")
 
 # Include the CMakeLists.txt found in the folder "src"
 add_subdirectory("src")
