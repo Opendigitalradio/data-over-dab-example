@@ -1,0 +1,48 @@
+general {
+    dabmode 1
+    nbframes 0
+}
+
+remotecontrol {
+    telnetport 0
+}
+
+ensemble {
+    id 0x4fff
+    ecc 0xe1
+
+    local-time-offset auto
+    international-table 1
+    label "DAB Demo"
+    shortlabel "DAB Demo"
+}
+
+services {
+    data_service {
+        label "IPT data"
+        id 13
+    }
+}
+
+subchannels {
+    data_subchannel {
+        type enhancedpacket
+        inputfile "/tmp/dabdata"
+        protection 1
+	      bitrate 32
+	      id 7
+        nonblock true
+    }
+}
+
+components {
+    data_component {
+        service data_service
+        subchannel data_subchannel
+        type 59
+    }
+}
+
+outputs {
+    stdout "fifo:///dev/stdout?type=raw"
+}
