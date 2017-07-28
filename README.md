@@ -1,9 +1,9 @@
-#Data over DAB Example
+# Data over DAB Example
 
 This repository contains an example packager and a receiver that demonstrate
 how to use the **Data over DAB** libraries.
 
-##Requirements
+## Requirements
 
 The following libraries are required to build the code in this repository:
 
@@ -13,7 +13,7 @@ The following libraries are required to build the code in this repository:
 Depending on your operating system these libraries might be available in your
 OS package repository.
 
-##Building
+## Building
 
 Building the examples requires **CMake**
 
@@ -32,14 +32,14 @@ $ cmake --build -- -j$(nproc)
 
 The resulting binaries can be found in `<build-directory>/products/Release/bin`
 
-##Running
+## Running
 
 Per default, the packager packages the incoming data in way that makes it look
 like it comes from `10.0.0.2` and goes to `10.0.0.1`. It also sets `1000` as
 the DAB packet address. Thus you need to make sure to pass `10.0.0.1` and
 `1000` as the `receiver`s arguments.
 
-###Packager
+### Packager
 To start the packager, you need to create the expected **fifo** and run the
 packager:
 ```
@@ -62,21 +62,21 @@ $ <source-root>/mux/run
 Please note that the `run` script requires **python** and **GNURadio** with the
 modules for the **HackRF** to run.
 
-###Receiver
+### Receiver
 Running the receiver requires an SDR device compatible with **librtlsdr**.
 The receiver requires **root** access to create the virtual network device:
 ```
 $ sudo <build-directory>/products/Release/bin/receiver 10.0.0.1 1000
 ```
 
-###Transmitting data
+### Transmitting data
 To send data via the DAB IP tunnel, you can send UDP datagrams to port 4321
 on the machine the packager is running on. For example you can use netcat:
 ```
 $ echo "Hello DAB" | nc -w0 -u 127.0.0.1 4321
 ```
 
-###Receiving data
+### Receiving data
 Receiving the transmitted is equally as simple. On the machine that is running
 the receiver, you will simply listen on the address of the virtual network
 interface for UDP datagrams on the port specified in the packager
