@@ -1,0 +1,6 @@
+[requires]
+libdabdecode/[>=1.0]@Opendigitalradio/stable
+libdabdevice/[>=1.0]@Opendigitalradio/stable
+libdabdemod/[>=1.0]@Opendigitalradio/stable
+libdabip/[>=1.0]@Opendigitalradio/stable
+Asio/[>=1.0]@fmorgner/stable

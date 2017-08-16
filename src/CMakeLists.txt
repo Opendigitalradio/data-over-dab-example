@@ -11,17 +11,18 @@ add_executable(
 
 target_link_libraries(
   "packager"
-  "${CMAKE_THREAD_LIBS_INI}"
-  "${DABIP_SHARED_LIBRARIES}"
+  "${CMAKE_THREAD_LIBS_INIT}"
+  CONAN_PKG::libdabip
   "tins"
   )
 
 target_link_libraries(
   "receiver"
-  "${CMAKE_THREAD_LIBS_INI}"
-  "${DABIP_SHARED_LIBRARIES}"
-  "${DABDEMOD_SHARED_LIBRARIES}"
-  "${DABDECODE_SHARED_LIBRARIES}"
+  "${CMAKE_THREAD_LIBS_INIT}"
+  CONAN_PKG::libdabdemod
+  CONAN_PKG::libdabdecode
+  CONAN_PKG::libdabdevice
+  CONAN_PKG::libdabip
   "fftw3f"
   "rtlsdr"
   )

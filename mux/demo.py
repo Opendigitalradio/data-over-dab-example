@@ -31,8 +31,8 @@ class hackrf_dab_sink(gr.top_block):
         self.osmosdr_sink_0.set_center_freq(218.640e6, 0)
         self.osmosdr_sink_0.set_freq_corr(0, 0)
         self.osmosdr_sink_0.set_gain(14, 0)
-        self.osmosdr_sink_0.set_if_gain(30, 0)
-        self.osmosdr_sink_0.set_bb_gain(30, 0)
+        self.osmosdr_sink_0.set_if_gain(14, 0)
+        self.osmosdr_sink_0.set_bb_gain(14, 0)
         self.osmosdr_sink_0.set_antenna("", 0)
         self.osmosdr_sink_0.set_bandwidth(1.75e6, 0)
 

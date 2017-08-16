@@ -18,20 +18,19 @@ ensemble {
 }
 
 services {
-    data_service {
+   data_service {
+        id 0x01
         label "IPT data"
-        id 13
     }
 }
 
 subchannels {
     data_subchannel {
-        type enhancedpacket
+	      id 0x01
+        type packet
         inputfile "/tmp/dabdata"
         protection 1
 	      bitrate 32
-	      id 7
-        nonblock true
     }
 }
 
