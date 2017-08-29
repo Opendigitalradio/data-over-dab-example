@@ -3,16 +3,16 @@ project("DataOverDAB"
   LANGUAGES CXX
   VERSION 1.0.1)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/products/bin" CACHE PATH "" FORCE)
+
 string(TOUPPER ${PROJECT_NAME} ${PROJECT_NAME}_UPPER)
 string(TOLOWER ${PROJECT_NAME} ${PROJECT_NAME}_LOWER)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/products/bin" CACHE PATH "" FORCE)
-
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
-set(CXX_VERSION "c++14")
-include("CompilerSetup")
-include("ConanPackages")
-install_conan_packages(SYSTEM_HEADERS)
+
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config/Base.cmake")
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config/Options.cmake")
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config/Dependencies.cmake")
 
 include_directories("include")
 

@@ -12,17 +12,14 @@ add_executable(
 target_link_libraries(
   "packager"
   "${CMAKE_THREAD_LIBS_INIT}"
-  CONAN_PKG::libdabip
+  "${${${PROJECT_NAME}_UPPER}_DEPS}"
   "tins"
   )
 
 target_link_libraries(
   "receiver"
   "${CMAKE_THREAD_LIBS_INIT}"
-  CONAN_PKG::libdabdemod
-  CONAN_PKG::libdabdecode
-  CONAN_PKG::libdabdevice
-  CONAN_PKG::libdabip
+  "${${${PROJECT_NAME}_UPPER}_DEPS}"
   "fftw3f"
   "rtlsdr"
   )

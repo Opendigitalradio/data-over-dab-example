@@ -104,7 +104,6 @@ int main(int argc, char * * argv)
       demod.stop();
       eventLoop.stop();
       std::cout << "Received SIGNINT. Stopping\n";
-      std::terminate();
       }
   });
 
